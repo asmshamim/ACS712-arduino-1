@@ -20,11 +20,11 @@ ACS712::ACS712(ACS712_type type, uint8_t _pin) {
 
 int ACS712::calibrate() {
 	int _zero = 0;
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 20; i++) {
 		_zero += analogRead(pin);
-		delay(10);
+		delay(1);
 	}
-	_zero /= 10;
+	_zero /= 20;
 	zero = _zero;
 	return _zero;
 }
